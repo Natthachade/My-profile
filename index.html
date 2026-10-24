@@ -5,6 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Profile</title>
     <style>
+        /* รองรับหน้าจอโทรศัพท์ */
+@media screen and (max-width: 600px) {
+    body {
+        margin: 0;
+        padding: 10px;
+    }
+
+    .profile {
+        width: 100%;
+        max-width: 100%;
+        min-height: 0;
+        height: auto;
+        margin: 10px auto;
+        padding: 16px 12px;
+        border-width: 3px;
+        border-radius: 20px;
+    }
+
+    img {
+        width: min(65vw, 220px);
+        height: min(65vw, 220px);
+        margin: 20px auto;
+    }
+
+    h2 {
+        font-size: clamp(20px, 5vw, 30px) !important;
+        overflow-wrap: anywhere;
+    }
+
+    p {
+        overflow-wrap: anywhere;
+        line-height: 1.7;
+    }
+
+    .btn {
+        max-width: 100%;
+        box-sizing: border-box;
+        justify-content: center;
+        margin: 5px 2px;
+    }
+}
         body {
             font-family: Arial, sans-serif;
             background-color: #2b2727;
@@ -14,9 +55,12 @@
         .profile {
             background: rgb(255, 255, 255);
             padding: 20px;
-            margin: 70px auto;
-            width: 500px;
+            margin: 40px auto;
+            width: 100%;
+            max-width: 530px;
+            min-height: 1800px;
             height: 1800px;
+            box-sizing: border-box;
             border-radius: 30px;
             border: 5px solid rgb(191, 191, 191) ;
             box-shadow: 0 0 500px rgba(67, 64, 64, 0.1);
@@ -34,12 +78,15 @@
            
         }
         img {
+            display: block;
             margin: 30px auto;
             width: 300px;
             height: 300px;
+            max-width: 100%;
             border-radius: 50%;
-            box-shadow: 10 10 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
             object-fit: cover;
+            object-position: center;
               animation: fadeInUp 2.0s ease;
 }
 @keyframes fadeInUp {
