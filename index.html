@@ -59,7 +59,7 @@
             width: 100%;
             max-width: 530px;
             min-height: 1800px;
-            height: 1800px;
+            height: auto;
             box-sizing: border-box;
             border-radius: 30px;
             border: 5px solid rgb(191, 191, 191) ;
@@ -105,6 +105,89 @@
         p {
             color: rgb(0, 0, 0);
         }
+        
+/* ป้องกันขนาดเกินหน้าจอ */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    overflow-wrap: anywhere;
+}
+
+body {
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    min-width: 0;
+    text-align: center;
+}
+
+/* กล่องพื้นหลังขยายตามข้อความ */
+.profile {
+    width: 100%;
+    max-width: 540px;
+    height: auto;
+    min-height: 0;
+    margin: 20px auto;
+    padding: 20px;
+    overflow-wrap: anywhere;
+    word-break: normal;
+}
+
+/* ข้อความทุกย่อหน้า */
+.profile p,
+.profile h2,
+.profile h3,
+.profile h4,
+.profile h5,
+.profile h6 {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    line-height: 1.7;
+}
+
+/* ปรับรูปให้เข้ากับจอมือถือ */
+.profile img {
+    width: min(300px, 75%);
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+/* จอมือถือ */
+@media (max-width: 600px) {
+    body {
+        padding: 8px;
+    }
+
+    .profile {
+        width: 100%;
+        max-width: 100%;
+        padding: 14px 12px;
+        margin: 10px auto;
+        border-width: 3px;
+        border-radius: 20px;
+    }
+
+    .profile p {
+        font-size: 15px;
+    }
+
+    .profile h2 {
+        font-size: 24px !important;
+    }
+
+    .profile .btn {
+        max-width: 100%;
+        margin: 5px 2px;
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+}
+
     </style>
 </head>
 <body>
